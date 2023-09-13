@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_900"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <Space
+        android:id="@+id/top_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="4dp">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/search_background"
+            android:scaleX="0.75"
+            android:scaleY="0.75"
+            app:srcCompat="@drawable/ic_arrow_back_24"
+            app:tint="@color/white"
+            android:contentDescription="@string/navigate_back" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_bold"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="@string/lbl_saved"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/search_background"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginHorizontal="12dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_search_24"
+            app:tint="@color/white"
+            android:importantForAccessibility="no" />
+
+        <EditText
+            android:id="@+id/search_field"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:padding="8dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/search_hint"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:includeFontPadding="false"
+            android:textColorHint="@color/light_blue_transparent_74"
+            android:importantForAutofill="no"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/clear_query"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/search_background"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            app:srcCompat="@drawable/ic_close_32"
+            app:tint="@color/white"
+            android:visibility="gone"
+            android:contentDescription="@string/clear_search" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/not_found"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_height="184dp"
+                android:layout_width="184dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/img_not_found"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_marginTop="40dp"
+                android:ellipsize="end"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:text="@string/lbl_opsss"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                android:text="@string/msg_movie_not_found"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_height="184dp"
+                android:layout_width="184dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/img_empty_list"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_marginTop="40dp"
+                android:ellipsize="end"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="20sp"
+                android:text="@string/lbl_no_movies"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:singleLine="true"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="16sp"
+                android:text="@string/msg_no_movies"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movies_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_movies" />
+
+        <Button
+            android:id="@+id/clear_favourites_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:text="@string/button_clear_favourites" />
+
+    </FrameLayout>
+
+</LinearLayout>

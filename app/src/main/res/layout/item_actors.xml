@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="104dp"
+    android:layout_height="127dp"
+    app:cardCornerRadius="12dp">
+
+    <ImageView android:id="@+id/actor_photo"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        tools:ignore="ContentDescription"
+        tools:src="@tools:sample/avatars"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_gravity="bottom|center"
+        android:orientation="vertical"
+        android:gravity="bottom|center">
+
+        <TextView
+            android:id="@+id/actor_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="10sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            tools:text="@tools:sample/full_names"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="6sp"
+            android:textColor="@color/semitransparent_65"
+            android:textAlignment="center"
+            android:text="@string/role_prefix"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="8sp"
+            android:textColor="@color/semitransparent_65"
+            android:textAlignment="center"
+            tools:text="@tools:sample/lorem"
+            tools:ignore="SmallSp" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

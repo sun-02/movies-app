@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/item_movies_list_background"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/poster"
+        android:layout_width="90dp"
+        android:layout_height="112dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedSquare"
+        tools:src="@tools:sample/backgrounds/scenic"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="Title" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/imdb_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:includeFontPadding="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:text="8.8" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/is_favourite"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/search_background"
+        app:buttonIcon="@drawable/bookmark_selector"
+        app:buttonTint="@android:color/transparent"
+        app:buttonIconTint="@color/white"
+        android:scaleX="0.75"
+        android:scaleY="0.75" />
+
+</LinearLayout>

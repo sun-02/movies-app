@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sort_by_default"
+        android:title="@string/sort_by_default" />
+    <item
+        android:id="@+id/sort_by_name"
+        android:title="@string/sort_by_name" />
+    <item
+        android:id="@+id/sort_by_imbd_rating"
+        android:title="@string/sort_by_imbd_rating" />
+    <item
+        android:id="@+id/sort_by_imbd_votes"
+        android:title="@string/sort_by_imbd_votes" />
+</menu>

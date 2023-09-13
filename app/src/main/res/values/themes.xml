@@ -1,0 +1,22 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MoviesApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.MoviesApp.Launcher">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="Theme.MoviesApp" parent="Base.Theme.MoviesApp" />
+
+    <style name="Base.Widget.AppCompat.CompoundButton.CheckBox.New" />
+
+    <style name="RoundedSquare">
+        <item name="cornerSize">15dp</item>
+    </style>
+</resources>

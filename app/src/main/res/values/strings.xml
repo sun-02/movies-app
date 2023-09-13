@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Movies App</string>
+
+    <string name="repeat_after">Repeat after: %1$d seconds</string>
+    <string name="search_hint">Type a title</string>
+    <string name="clear_search">Clear search string</string>
+    <string name="filter_movies">Filter movies</string>
+    <string name="movie_preview">Movie preview</string>
+    <string name="button_navigate_to_favourites">Favourites</string>
+    <string name="button_clear_favourites">Clear favourites</string>
+    <string name="play_trailer">Play trailer</string>
+    <string name="error_detail">An error occurred when loading movie detail:\n%1$s</string>
+    <string name="try_again">Try again</string>
+    <string name="navigate_back">Navigate back</string>
+    <string name="lbl_opsss">Opsss !</string>
+    <string name="lbl_no_movies">No movies yet</string>
+    <string name="msg_movie_not_found">What you are looking for is not found</string>
+    <string name="msg_no_movies">Let\'s add some movies to your favourites list</string>
+    <string name="msg_no_movies_main">Loading movies list</string>
+    <string name="lbl_saved">Saved</string>
+    <string name="role_prefix">as</string>
+    <string name="lbl_movie_genre">Genre</string>
+    <string name="lbl_movie_release_date">Release date</string>
+    <string name="lbl_movie_imdb_rating">IMDB rating</string>
+    <string name="lbl_movie_country">Country</string>
+    <string name="lbl_movie_actors">Actors</string>
+    <string name="expand_action">Read more</string>
+
+    <!-- menu -->
+    <string name="sort_by_default">Sort by default</string>
+    <string name="sort_by_name">Sort by name</string>
+    <string name="sort_by_imbd_rating">Sort by imbd rating</string>
+    <string name="sort_by_imbd_votes">Sort by imbd votes</string>
+</resources>
