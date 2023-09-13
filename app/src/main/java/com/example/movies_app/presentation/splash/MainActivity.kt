@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                         runBlocking {
                             delay(800L)
                         }
-                        addFragment<MoviesFragment>(R.id.container)
+                        addFragment<MoviesFragment>(R.id.container, addToBackStack = false)
                     }
 
                     is MainActivityState.RepeatAfter -> {
