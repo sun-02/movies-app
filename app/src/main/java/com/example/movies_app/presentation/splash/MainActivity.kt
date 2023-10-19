@@ -29,39 +29,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         lifecycleScope.launch {
             viewModel.state.collect { state ->
                 when (state) {
-                    is MainActivityState.ErrorFetchingToDatabase -> {
-                        binding.errorMessage.let { tv ->
-                            tv.isVisible = true
-                            tv.text = state.message
-                        }
-                    }
-
-                    MainActivityState.Fetching -> {
-                        binding.errorMessage.isVisible = false
-                        binding.repeatAfter.isVisible = false
-                    }
-
-                    MainActivityState.SuccessfullyFetchedToDatabase -> {
-                        runBlocking {
-                            delay(800L)
-                        }
-                        addFragment<MoviesFragment>(R.id.container, addToBackStack = false)
-                    }
-
-                    is MainActivityState.RepeatAfter -> {
-                        binding.repeatAfter.let { tv ->
-                            tv.isVisible = true
-                            tv.text = getString(R.string.repeat_after, state.seconds)
-                        }
-                    }
+                    is MainActivityState.ErrorFetchingToDatabase -> showError(state)
+                    MainActivityState.Fetching -> showLoading()
+                    MainActivityState.SuccessfullyFetchedToDatabase -> showMoviesFragment()
+                    is MainActivityState.RepeatAfterTimeoutUpdate -> timeoutUpdate(state)
                 }
             }
+        }
+    }
+
+    private fun timeoutUpdate(state: MainActivityState.RepeatAfterTimeoutUpdate) {
+        binding.repeatAfter.let { tv ->
+            tv.isVisible = true
+            tv.text = getString(R.string.repeat_after, state.seconds)
+        }
+    }
+
+    private fun showMoviesFragment() {
+        runBlocking {
+            delay(800L)
+        }
+        addFragment<MoviesFragment>(R.id.container, addToBackStack = false)
+    }
+
+    private fun showLoading() {
+        binding.errorMessage.isVisible = false
+        binding.repeatAfter.isVisible = false
+    }
+
+    private fun showError(state: MainActivityState.ErrorFetchingToDatabase) {
+        binding.errorMessage.let { tv ->
+            tv.isVisible = true
+            tv.text = state.message
         }
     }
 
